@@ -1,0 +1,656 @@
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* Logo and text container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-height: 60px; /* Adjust as needed */
+    width: auto;
+    margin-right: 20px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: #333; /* Dark text color for visibility */
+    line-height: 1.2;
+}
+
+.main-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d90000; /* Red color for main title */
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.platform-title {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    border-color: #0056b3;
+    color: #0056b3;
+}
+
+main section:not(#hero-slider) {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#hero-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjusted height */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    color: white;
+    z-index: 2;
+    text-align: left; /* Align text to the left */
+    max-width: 600px; /* Limit width for better readability */
+    padding: 2rem 2rem 2rem 10%; /* Add padding to the left */
+}
+
+.slide-content h1 {
+    font-size: 3.5rem; /* Larger font size for title */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.slide-content ul {
+    list-style: none; /* We will add custom bullets */
+    padding-left: 1.5rem; /* Indent list */
+}
+
+.slide-content ul li {
+    font-size: 1.2rem; /* Smaller font size for content */
+    margin-bottom: 0.5rem;
+    position: relative;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+.slide-content ul li::before {
+    content: '•';
+    position: absolute;
+    left: -1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 1.5rem;
+    background: linear-gradient(90deg, #0056b3, #007bff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Demo Projects Section */
+#demo-projects {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#customer-cases h2, #demo-projects h2, #service-hall h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 服务大厅 */
+#service-hall {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-form .form-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.filter-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.filter-form .query-btn, .filter-form .reset-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-form .query-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.filter-form .reset-btn {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.quick-filters {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.quick-filters label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.routes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.route-card {
+    background: #fff;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.route-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+}
+
+.route-card .route-details {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    margin-top: 0;
+    border-top-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s ease-out, margin-top 0.4s ease-out, padding 0.4s ease-out, opacity 0.2s ease-out, border-width 0.4s ease-out, visibility 0.4s;
+}
+
+.route-card:hover .route-details {
+    max-height: 200px;
+    margin-top: 25px;
+    padding: 20px;
+    border-top-width: 1px;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.4s ease-in, margin-top 0.4s ease-in, padding 0.4s ease-in, opacity 0.3s 0.1s ease-in, border-width 0.4s ease-in, visibility 0.4s;
+}
+
+.route-summary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.route-summary .path {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #333;
+}
+
+.route-summary .info {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.route-summary .info strong {
+    font-weight: normal;
+    color: #555;
+}
+
+.route-summary .actions button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.route-summary .actions button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.route-summary .actions .contact-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.route-summary .actions .contact-btn:hover {
+    background-color: #0056b3;
+}
+
+.route-details {
+    border-top: 1px solid #f0f0f0;
+    background-color: #fafcff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.route-details .segment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.route-details .segment span {
+    font-weight: bold;
+    background-color: #e9f5ff;
+    color: #007bff;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.route-details .transport-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.route-details .arrow {
+    font-size: 1.5em;
+    color: #ccc;
+}
+
+.project-description {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.8;
+    color: #666;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 2rem;
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    cursor: pointer;
+    transition: width 0.4s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    width: 500px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10, 88, 202, 0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    clip-path: polygon(0 45%, 100% 25%, 100% 100%, 0 100%);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    transition: all 0.4s ease-in-out;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s 0.2s ease-in-out, max-height 0.4s 0.2s ease-in-out;
+}
+
+.card:hover p {
+    opacity: 1;
+    max-height: 200px; /* Adjust as needed */
+}
+
+/* Partners Section */
+#partners {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#partners h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.partners-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Spacing between logos */
+}
+
+.partners-logos img {
+    height: 60px;
+    max-width: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partners-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* Station Showcase Section */
+#station-showcase {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+#station-showcase h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.station-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap; /* 允许换行以实现响应式 */
+}
+
+.station-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: calc(33.333% - 16px); /* (100% / 3) - (gap * 2 / 3) */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+
+.station-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.station-card-image {
+    height: 220px;
+    overflow: hidden;
+}
+
+.station-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.station-card-content {
+    padding: 24px;
+    flex-grow: 1; /* 确保内容区域填满剩余空间 */
+}
+
+.station-card-content h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.station-card-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+.station-card-content ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.station-card-content .icon {
+    width: 20px;
+    height: 20px;
+    fill: #007bff;
+}
+
+.station-card-content p {
+    line-height: 1.7;
+    color: #666;
+}
+
+/* Responsive Design for Station Showcase */
+@media (max-width: 992px) {
+    .station-card {
+        width: calc(50% - 12px);
+    }
+}
+
+@media (max-width: 767px) {
+    .station-card {
+        width: 100%;
+    }
+}
+
+
+/* Enterprise Intro Section */
+#enterprise-intro {
+    background-color: #f8f9fa; /* Light grey background */
+    position: relative;
+    z-index: 2;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Space between text and images */
+}
+
+.intro-text {
+    flex: 1.5; /* Text takes more space */
+}
+
+.intro-text h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.intro-text p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.intro-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.intro-images img {
+    width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Crop images to fit */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.solution-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.solution-tabs .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.solution-tabs .tab.active {
+    border-color: #0056b3;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+}
